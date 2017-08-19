@@ -82,6 +82,10 @@ export function parseDateTime(s) {
  * @return {string} (3 станет '03')
  */
 export function intToStrFormatted(n) {
+    if (n < 0) {
+        return '-' + intToStrFormatted(-n);
+    }
+
     return (n < 10) ? '0' + String(n) : String(n);
 }
 
