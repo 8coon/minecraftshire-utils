@@ -1,9 +1,6 @@
 {
   "name": "minecraftshire-utils",
   "version": "2.0.1",
-  "scripts": {
-    "test": "mocha"
-  },
   "dependencies": {
     "es6-symbol": "^3.1.1"
   }
