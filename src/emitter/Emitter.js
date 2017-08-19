@@ -1,5 +1,6 @@
 import Symbol from 'es6-symbol';
 
+
 function Emitter() {
 }
 
