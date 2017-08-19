@@ -101,6 +101,7 @@ export function serializeDateTime(date) {
     // Смещение часового пояса -- не UTC
     if (tzOffsetMinutes !== 0) {
         var tzSign = tzOffsetHours < 0 ? '-' : '+';
+        tzOffsetHours = Math.abs(tzOffsetHours);
 
         if (Math.floor(tzOffsetHours) === Math.ceil(tzOffsetHours)) {
             // Смещение можно записать кратко
