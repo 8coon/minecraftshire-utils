@@ -71,8 +71,8 @@ export function parseDateTime(s) {
     var dateObj = new Date(date.year, date.month, date.day, time.hours, time.minutes, time.seconds);
 
     // Получаем полное смещение локального часового пояса и часового пояса строки в минутах
-    var timeOffset = time.minutesOffset + getLocalTZMinuteOffset();
-    dateObj.setTime(dateObj.getTime() - timeOffset * 60*60*1000);
+    var timeOffset = time.minutesOffset - getLocalTZMinuteOffset();
+    dateObj.setTime(dateObj.getTime() + timeOffset * 60*1000);
 
     return dateObj;
 }
@@ -94,7 +94,7 @@ export function intToStrFormatted(n) {
  * @return {string} 2017-08-17T12:29:54+03
  */
 export function serializeDateTime(date) {
-    var tzOffsetMinutes = -getLocalTZMinuteOffset();
+    var tzOffsetMinutes = getLocalTZMinuteOffset();
     var tzOffsetHours = tzOffsetMinutes / 60;
     var tzOffset = 'Z';
 
@@ -117,7 +117,7 @@ export function serializeDateTime(date) {
     return '' +
         String(date.getFullYear()) + '-' +
         intToStrFormatted(date.getMonth() + 1) + '-' +
-        intToStrFormatted(date.getDay()) + 'T' +
+        intToStrFormatted(date.getDate()) + ' ' +
         intToStrFormatted(date.getHours()) + ':' +
         intToStrFormatted(date.getMinutes()) + ':' +
         intToStrFormatted(date.getSeconds()) +
