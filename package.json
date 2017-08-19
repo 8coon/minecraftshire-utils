@@ -5,7 +5,6 @@
     "test": "mocha"
   },
   "dependencies": {
-    "es6-symbol": "^3.1.1",
-    "parse-es6-imports": "^1.0.1"
+    "es6-symbol": "^3.1.1"
   }
 }
