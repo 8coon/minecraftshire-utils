@@ -1,6 +1,6 @@
 {
   "name": "minecraftshire-utils",
-  "version": "2.3.$",
+  "version": "2.4.0",
   "dependencies": {
     "es6-symbol": "^3.1.1"
   }
