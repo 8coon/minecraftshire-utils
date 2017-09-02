@@ -10,7 +10,7 @@ var chars = 'QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789'.spl
 export function randomString(length) {
     length = length || 30;
 
-    return Array.from({length}, function() {
+    return Array.from({length: length}, function() {
         var idx = Math.floor(Math.random() * chars.length);
 
         return chars[idx];
