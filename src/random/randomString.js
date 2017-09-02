@@ -7,7 +7,7 @@ var chars = 'QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789'.spl
  * @param {number} length
  * @return {string}
  */
-export function randomString(length) {
+export default function randomString(length) {
     length = length || 30;
 
     return Array.from({length: length}, function() {
