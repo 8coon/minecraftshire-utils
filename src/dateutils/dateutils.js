@@ -72,7 +72,7 @@ export function parseDateTime(s) {
 
     // Получаем полное смещение локального часового пояса и часового пояса строки в минутах
     var timeOffset = time.minutesOffset - getLocalTZMinuteOffset();
-    dateObj.setTime(dateObj.getTime() + timeOffset * 60*1000);
+    dateObj.setTime(dateObj.getTime() - timeOffset * 60*1000);
 
     return dateObj;
 }
